@@ -21,13 +21,6 @@ public class YellowCubeScript : MonoBehaviour
                 FindObjectOfType<CubeScript>().spawnCube();
                 FindObjectOfType<YellowCubeScript>().GetComponent<Rigidbody>().constraints = ~RigidbodyConstraints.FreezePositionY;
                 break;
-            /*case "RedCube":
-                if (Vector3.Dot(collision.contacts[0].normal, Vector3.forward) < -0.5f)
-                {
-                    transform.tag = "DetachedCube";
-                    transform.SetParent(null);
-                }
-                break;*/
             case "Turn":
                 FindObjectOfType<CubeScript>().IsCircle = true;
                 break;
