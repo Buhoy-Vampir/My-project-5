@@ -1,7 +1,4 @@
-﻿using NotInvited.VersionFromGit.Editor.Git;
-using NotInvited.VersionFromGit.Editor.Settings;
-using NotInvited.VersionFromGit.Editor.Utils;
-using System;
+﻿using NotInvited.VersionFromGit.Editor.Settings;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;

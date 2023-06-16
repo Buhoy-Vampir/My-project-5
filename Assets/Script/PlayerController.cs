@@ -2,7 +2,13 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    public bool IsPlay = true;
+
+    private ContainerScript container;
+    private CameraFollow cameraFollow;
+
+    private void Start()
+    {
+    }
 
     private void FixedUpdate()
     {
@@ -11,11 +17,5 @@ public class PlayerController : MonoBehaviour
     }
 
 
-    public void GameOver()
-    {
-        IsPlay = false;
-        FindObjectOfType<CubeScript>().GetComponent<Rigidbody>().isKinematic = true;
-        Debug.Log("GameOver");
-    }
 
 }

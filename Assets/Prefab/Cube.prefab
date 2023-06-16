@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 4472572462709498039}
   - component: {fileID: 9091760008159406310}
   - component: {fileID: 3252186563571556684}
+  - component: {fileID: 3359044512095157699}
   m_Layer: 0
   m_Name: Cube
   m_TagString: PlayerCube
@@ -123,7 +124,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 114
+  m_Constraints: 112
   m_CollisionDetection: 2
 --- !u!64 &3252186563571556684
 MeshCollider:
@@ -147,3 +148,15 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -5495902117074765545, guid: fd25edf0dc24d4aed96cd5419e65e154, type: 3}
+--- !u!75 &3359044512095157699
+ConstantForce:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3511667245883961794}
+  m_Enabled: 1
+  m_Force: {x: 0, y: -10, z: 0}
+  m_RelativeForce: {x: 0, y: 0, z: 0}
+  m_Torque: {x: 0, y: 0, z: 0}
+  m_RelativeTorque: {x: 0, y: 0, z: 0}

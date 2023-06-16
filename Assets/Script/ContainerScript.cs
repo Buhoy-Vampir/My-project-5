@@ -1,6 +1,5 @@
 using System;
 using UnityEngine;
-using UnityEngine.UIElements;
 
 public class ContainerScript : MonoBehaviour
 {
@@ -10,15 +9,6 @@ public class ContainerScript : MonoBehaviour
     [SerializeField] private float _speed;
     [SerializeField] private float _x_Speed;
     [SerializeField] private float _angularVelocity;
-
-    private void Start()
-    {
-        GameObject _newCube = Instantiate(CubePrefab);
-        _newCube.transform.name = Convert.ToString(transform.childCount);
-        Transform yellowCube = _newCube.transform;
-        yellowCube.position = new Vector3(0f,0.5f,0f);
-        yellowCube.SetParent(transform);
-    }
 
     void Update()
     {
@@ -47,7 +37,7 @@ public class ContainerScript : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (FindObjectOfType<PlayerController>().IsPlay)
+        if (FindObjectOfType<ScriptScene>().IsPlay)
         {
             float x = 0;
             if (Input.GetMouseButton(0))
@@ -85,12 +75,7 @@ public class ContainerScript : MonoBehaviour
             transform.GetChild(i).localPosition += Vector3.up;
         }
         Vector3 vector = transform.GetChild(transform.childCount - 1).position;
-        yellowCube.position =  new Vector3(vector.x, vector.y - 1, vector.z);
+        yellowCube.position = new Vector3(vector.x, vector.y - 1, vector.z);
         yellowCube.SetParent(transform);
-    }
-
-    public void deleteCube()
-    {
-
     }
 }

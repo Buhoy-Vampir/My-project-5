@@ -82,7 +82,7 @@ namespace NotInvited.VersionFromGit.Editor.Git
             {
                 var result = GitUtils.TryGetLastTag();
 
-                if(result.hasTag == false)
+                if (result.hasTag == false)
                 {
                     result = GitUtils.TryGetLastTag("[0-9]*");
                 }
@@ -120,7 +120,7 @@ namespace NotInvited.VersionFromGit.Editor.Git
             int firstIndex = 0;
 
             char firstChar = version.ToCharArray()[0];
-            if(firstChar == 'v' || firstChar == 'V')
+            if (firstChar == 'v' || firstChar == 'V')
             {
                 firstIndex = 1;
             }
