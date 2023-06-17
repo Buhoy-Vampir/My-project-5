@@ -12,19 +12,23 @@ public class CubeScript : MonoBehaviour
                 FindObjectOfType<ContainerScript>().spawnCube();
                 break;
             case "RedCube":
-                if (transform.localPosition.z < -0.3f || FindObjectOfType<ContainerScript>().transform.childCount == 1)
+                if (transform.localPosition.z < -0.3f)
                 {
                     transform.GetComponent<Rigidbody>().isKinematic = true; 
                     transform.tag = "DetachedCube";
-                    transform.SetParent(null);
+                    if (FindObjectOfType<ContainerScript>().transform.childCount == 1)
+                    {
+                        GetComponent<Rigidbody>().isKinematic = true;
+                        transform.SetParent(null);
+                        FindObjectOfType<ScriptScene>().GameOver();
+                        Debug.Log("GameOver");
+                    }
+                    else
+                    {
+                        transform.SetParent(null);
+                    }
                 }
-                if(transform.name == "0" && FindObjectOfType<ContainerScript>().transform.childCount == 1 && transform.localPosition.z < -0.3f)
-                {
-                    GetComponent<Rigidbody>().isKinematic = true;
-                    transform.SetParent(null);
-                    FindObjectOfType<ScriptScene>().GameOver();
-                    Debug.Log("GameOver");
-                }
+               
                 break;
             case "Turn":
                 FindObjectOfType<ContainerScript>().IsCircle = true;
