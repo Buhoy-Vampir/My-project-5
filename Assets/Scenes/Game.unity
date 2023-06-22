@@ -3469,7 +3469,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   IsPlay: 1
   canvasScore: {fileID: 581197023}
-  FinishOrDestroy: {fileID: 1740705962}
+  FinishOrGameOver: {fileID: 1740705962}
   ScoreCube: {fileID: 962013958}
 --- !u!4 &375451379
 Transform:

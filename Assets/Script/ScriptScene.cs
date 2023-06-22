@@ -6,7 +6,7 @@ public class ScriptScene : MonoBehaviour
 {
     public bool IsPlay = true;
     public GameObject canvasScore;
-    public TextMeshProUGUI FinishOrDestroy;
+    public TextMeshProUGUI FinishOrGameOver;
     public TextMeshProUGUI ScoreCube;
 
     private void Start()
@@ -14,19 +14,18 @@ public class ScriptScene : MonoBehaviour
         canvasScore.SetActive(false);
     }
 
-    public void Finish()
+    public void StatusGame(string status)
     {
-        FinishOrDestroy.text = "Игра пройдена!";
+        switch (status)
+        {
+            case "Finish":
+                FinishOrGameOver.text = "Игра пройдена!";
+                break;
+            case "GameOver":
+                FinishOrGameOver.text = "Вы проиграли:(";
+                break;
+        }
         ScoreCube.text = $"Кубов собрано: {FindObjectOfType<ContainerScript>().transform.childCount}";
-        IsPlay = false;
-        canvasScore.SetActive(true);
-
-    }
-
-    public void GameOver()
-    {
-        FinishOrDestroy.text = "Вы проиграли:(";
-        ScoreCube.text = $"Кубов собрано: 0";
         IsPlay = false;
         canvasScore.SetActive(true);
     }

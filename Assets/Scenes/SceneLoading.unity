@@ -454,7 +454,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2069299628}
   - component: {fileID: 2069299627}
-  - component: {fileID: 2069299626}
   m_Layer: 0
   m_Name: LoadManager
   m_TagString: Untagged
@@ -462,19 +461,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &2069299626
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2069299625}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5940792c75cca9d488a4fa4025e77966, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Text: {fileID: 1301427843}
 --- !u!114 &2069299627
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -488,6 +474,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Transform: {fileID: 8937944754727061420}
+  Text: {fileID: 1301427843}
 --- !u!4 &2069299628
 Transform:
   m_ObjectHideFlags: 0

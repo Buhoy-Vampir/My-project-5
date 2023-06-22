@@ -18,17 +18,14 @@ public class CubeScript : MonoBehaviour
                     transform.tag = "DetachedCube";
                     if (FindObjectOfType<ContainerScript>().transform.childCount == 1)
                     {
-                        GetComponent<Rigidbody>().isKinematic = true;
                         transform.SetParent(null);
-                        FindObjectOfType<ScriptScene>().GameOver();
-                        Debug.Log("GameOver");
+                        FinishOrGameOver("GameOver");
                     }
                     else
                     {
                         transform.SetParent(null);
                     }
                 }
-               
                 break;
             case "Turn":
                 FindObjectOfType<ContainerScript>().IsCircle = true;
@@ -36,9 +33,9 @@ public class CubeScript : MonoBehaviour
             case "Destroy":
                 if (transform.name == "0")
                 {
-                    GetComponent<Rigidbody>().isKinematic = true;
-                    FindObjectOfType<ScriptScene>().GameOver();
-                    Debug.Log("GameOver");
+                    GetComponent<MeshRenderer>().enabled = false;
+                    transform.SetParent(null);
+                    FinishOrGameOver("GameOver");
                 }
                 else
                 {
@@ -46,12 +43,17 @@ public class CubeScript : MonoBehaviour
                 }
                 break;
             case "Finish":
-                    GetComponent<Rigidbody>().isKinematic = true;
-                    FindObjectOfType<ScriptScene>().Finish();
-                Debug.Log("Finish");
+                FinishOrGameOver("Finish");
                 break;
             default:
                 break;
         }
+    }
+
+    private void FinishOrGameOver(string status)
+    {
+        FindObjectOfType<ScriptScene>().StatusGame(status);
+        GetComponent<Rigidbody>().isKinematic = true;
+        Debug.Log(status);
     }
 }
